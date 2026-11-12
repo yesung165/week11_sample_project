@@ -4,5 +4,6 @@ export const initialCourses = [
   { id: 2, name: 'Computer Architerture and Programming', category: 'Major', completed: false },
   { id: 3, name: 'Python Programming', category: 'Elective', completed: false },
   { id: 4, name: 'Discrete Mathematics', category: 'Major', completed: false },
-  { id: 5, name: 'Linear Alegebra', category: 'Elective', completed: false },
+  { id: 5, name: 'Linear Alegebra', category: 'Elective', completed: true },
+  { id: 6, name: 'Chapel', category: "Elective", completed: false}
 ];

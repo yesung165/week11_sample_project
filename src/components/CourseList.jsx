@@ -37,7 +37,7 @@ export default function CourseList() {
   // TODO 2 (필수): 완료 상태 변경 기능을 구현하세요.
   function handleToggle(id) {
     // TODO: map과 spread(...)를 사용하여 해당 id의 completed를 반전
-    
+
 
 
 
@@ -72,7 +72,7 @@ export default function CourseList() {
           <span className="small-note">{courses.length} courses</span>
         </div>
         <p className="todo">
-          실습 과제: 아래 Add 버튼과 완료 체크박스의 기능을 직접 구현하세요.
+          You can do it!! Get through the semester!!
         </p>
         <form className="add-form" onSubmit={handleAdd}>
           {" "}

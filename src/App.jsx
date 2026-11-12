@@ -5,11 +5,11 @@ export default function App() { //app function that returns header and footer, w
     <main className="page">
       <header className="hero">
         <div>
-          <p className="topline">OPEN SOURCE STUDIO · WEEK 11</p>
-          <h1>My Course Manager</h1>
-          <p className="subtitle">React Component, Props & State Practice</p>
+          <p className="topline">OPEN SOURCE STUDIO · WEEK 11 HOMEWORK</p>
+          <h1>Course Manager for 22300778</h1>
+          <p className="subtitle">These are your classes for 26-2</p>
         </div>
-        <span className="tag">STUDENT STARTER</span>
+        <span className="tag">26-2</span>
       </header>
       <CourseList />
       <footer className="bottom">

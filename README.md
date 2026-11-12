@@ -121,3 +121,26 @@ function handleDelete(id) {
 window.confirm shows an OK/Cancel dialog. If the user cancels, it returns `false` and the function exits immediately.
 The call to setCourses passes a update, (previous) => .... previous is the latest state, so the update is safe even when it is called several times in a row.
 filter creates a new array*and leaves the original unchanged. React detects changes by reference, so this is the correct way to update state.
+
+## 변경 내용 (Changes since last commit `a53d61c`)
+
+in App.jsx
+
+<p className="topline">OPEN SOURCE STUDIO · WEEK 11 HOMEWORK</p>
+<h1>Course Manager for 22300778</h1>
+<p className="subtitle">These are your classes for 26-2</p>
+
+in courseList 
+<p className="todo">
+          You can do it!! Get through the semester!!
+        </p>
+
+headings and descriptions changed 
+
+
+css changes 
+
+font to times new roman 
+color of letters to green
+background to blue
+btn primary to red
