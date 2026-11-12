@@ -27,7 +27,7 @@ export default function CourseList() {
   const doneCount = courses.filter((course) => course.completed).length;
 
   return (
-    <>
+    <> {/* This is a comment */}
       <section className="stats" aria-label="과목 통계">
         <div className="stat">
           <span>전체 과목</span>

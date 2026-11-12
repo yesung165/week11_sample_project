@@ -40,3 +40,21 @@ npm run dev
 - 브라우저 새로고침 시 데이터가 초기화되는 이유는? (DB/localStorage 없음)
 
 > 교육 목적의 로컬 State 앱입니다. 서버 API 및 데이터베이스는 사용하지 않습니다.
+
+## 제공된 소스코드를 읽고 다음 내용을 분석합니다.
+
+### Project Structure: 주요 파일 3개의 역할
+1. App.jsx 
+    - main layout of the page, with the header, maincontent and footer. in maincontent calls CourseList
+2. CourseList.jsx
+    - Parent Component that has list, and calls on CourseItem for each item. Has CRUD logic and renders courseItem
+3. CourseItem.jsx 
+    - shows course in one line, doesnt have a state and shows the value received by props. has checkbox and delete button. 
+
+Index -> main -> App -> CourseList -> CourseItem 
+
+
+
+Component & Props: CourseList와 CourseItem의 관계 및 Props 전달 방식
+State & Event: useState를 이용한 상태 관리 및 삭제 버튼의 동작 원리
+Code Analysis: 주요 코드 2개(각 5~15줄)를 선택하여 동작 원리 설명

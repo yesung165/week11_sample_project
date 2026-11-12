@@ -1,6 +1,6 @@
-import CourseList from "./components/CourseList.jsx";
+import CourseList from "./components/CourseList.jsx"; //import
 
-export default function App() {
+export default function App() { //app function that returns header and footer, with courselist in the middle, overall struct of the page
   return (
     <main className="page">
       <header className="hero">
