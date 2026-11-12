@@ -6,6 +6,7 @@ export default function CourseList() {
   // [제공] 초기 배열을 useState로 관리합니다.
   const [courses, setCourses] = useState(initialCourses);
   const [newName, setNewName] = useState("");
+  const [filter, setFilter] = useState("all"); // all done and active
 
   // [제공] 삭제 기능: filter로 새 배열을 만들어 업데이트합니다.
   function handleDelete(id) {
@@ -46,6 +47,14 @@ export default function CourseList() {
 }
 
   const doneCount = courses.filter((course) => course.completed).length;
+
+  // show only the courses that match the dropdown
+  let visibleCourses = courses;
+  if (filter === "done") {
+    visibleCourses = courses.filter((course) => course.completed === true);
+  } else if (filter === "active") {
+    visibleCourses = courses.filter((course) => course.completed === false);
+  }
 
   return (
     <>
@@ -89,15 +98,30 @@ export default function CourseList() {
             + Add Course
           </button>
         </form>
+
+
+        {/* drop down filter */}
+        <div className="filters">
+          <select
+            className="input"
+            value={filter}
+            onChange={(event) => setFilter(event.target.value)}
+          >
+            <option value="all">전체</option>
+            <option value="done">완료</option>
+            <option value="active">미완료</option>
+          </select>
+        </div>
+
+
+        
         <div className="list-head">
           <span>COURSE</span>
           <span>CATEGORY</span>
           <span>ACTIONS</span>
         </div>
-        {courses.length === 0 && (
-          <div className="empty">등록된 과목이 없습니다.</div>
-        )}
-        {courses.map((course) => (
+        
+        {visibleCourses.map((course) => (
           <CourseItem
             key={course.id}
             course={course}
