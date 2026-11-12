@@ -44,23 +44,40 @@ npm run dev
 ## 제공된 소스코드를 읽고 다음 내용을 분석합니다.
 
 ### Project Structure: 주요 파일 3개의 역할
-1. App.jsx 
-    - main layout of the page, with the header, maincontent and footer. in maincontent calls CourseList
+
+1. App.jsx
+   - main layout of the page, with the header, maincontent and footer. in maincontent calls CourseList
 2. CourseList.jsx
-    - Parent Component that has list, and calls on CourseItem for each item. Has CRUD logic and renders courseItem
-3. CourseItem.jsx 
-    - shows course in one line, doesnt have a state and shows the value received by props. has checkbox and delete button. 
+   - Parent Component that has list, and calls on CourseItem for each item. Has CRUD logic and renders courseItem
+3. CourseItem.jsx
+   - shows course in one line, doesnt have a state and shows the value received by props. has checkbox and delete button.
 
-Index -> main -> App -> CourseList -> CourseItem 
+Index -> main -> App -> CourseList -> CourseItem
+
+### Component & Props: CourseList와 CourseItem의 관계 및 Props 전달 방식
+
+courselist is the parent to courseitem. CourseList renders courseItem in its main section with the usage of map.
+
+<CourseItem
+            key={course.id}
+            course={course}
+            onDelete={handleDelete}
+            onToggle={handleToggle}
+          />
+
+These values go into CourseItem function in CourseItem.jsx 
+
+coursItem can take course, onDelete, onToggle. 
+
+key={course.id} is not a prop but key for list 
+
+course is the object being passed that has (id, name, category, completed )
+
+onDelete and onToggle is function defined from the parrent thats passed down to the child. The child calls these to change what the parent is displaying, it is a callback. 
 
 
 
-Component & Props: CourseList와 CourseItem의 관계 및 Props 전달 방식
-
-
-
-State & Event: useState를 이용한 상태 관리 및 삭제 버튼의 동작 원리
-
+### State & Event: useState를 이용한 상태 관리 및 삭제 버튼의 동작 원리
 
 
 Code Analysis: 주요 코드 2개(각 5~15줄)를 선택하여 동작 원리 설명
