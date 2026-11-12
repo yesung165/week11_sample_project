@@ -20,6 +20,7 @@ export default function CourseItem({ course, onDelete, onToggle }) {
       <div className="category-cell">
         <span className="category">{course.category}</span>
       </div>
+      
       <div className="actions">
         <button
           className="btn danger"
