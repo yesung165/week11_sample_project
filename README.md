@@ -80,4 +80,21 @@ onDelete and onToggle is function defined from the parrent thats passed down to 
 ### State & Event: useState를 이용한 상태 관리 및 삭제 버튼의 동작 원리
 
 
-Code Analysis: 주요 코드 2개(각 5~15줄)를 선택하여 동작 원리 설명
+  // [제공] 초기 배열을 useState로 관리합니다.
+  const [courses, setCourses] = useState(initialCourses);
+  const [newName, setNewName] = useState("");
+
+
+courses is the array of courses, which is updated on delete add and toggle 
+
+newName is value in the input field, has to be updated every key typed 
+
+When delete button is pressed: 
+1. button calls handleDelete(id) with onClick 
+2. course.id goes into the function 
+3. The function first aasks if they are sure with an  window.confirm. if the user cancels the function returns.
+4. user confirms then setCourses uses filter to make an array without the id with '!='. 
+5. state changes and the re render shows CourseItem array without the id selected. 
+
+
+### Code Analysis: 주요 코드 2개(각 5~15줄)를 선택하여 동작 원리 설명
