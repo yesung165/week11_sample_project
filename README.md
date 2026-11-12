@@ -98,3 +98,26 @@ When delete button is pressed:
 
 
 ### Code Analysis: 주요 코드 2개(각 5~15줄)를 선택하여 동작 원리 설명
+{courses.map((course) => (
+          <CourseItem
+            key={course.id}
+            course={course}
+            onDelete={handleDelete}
+            onToggle={handleToggle}
+          />
+
+This code is important because it is render. 
+map creates an CourseItem per course. 
+
+id is the unique value for just choosing the unique courseItem.
+
+There is props passing with onDelete and onToggle so the functions defined in CourseList can be used by the courseItem. Callback 
+
+function handleDelete(id) {
+    if (!window.confirm("이 과목을 삭제하시겠습니까?")) return;
+    setCourses((previous) => previous.filter((course) => course.id !== id));
+  }
+
+window.confirm shows an OK/Cancel dialog. If the user cancels, it returns `false` and the function exits immediately.
+The call to setCourses passes a update, (previous) => .... previous is the latest state, so the update is safe even when it is called several times in a row.
+filter creates a new array*and leaves the original unchanged. React detects changes by reference, so this is the correct way to update state.
