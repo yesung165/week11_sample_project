@@ -8,7 +8,7 @@ export default function CourseItem({ course, onDelete, onToggle }) {
           type="checkbox"
           checked={course.completed}
           onChange={() => onToggle(course.id)}
-          aria-label={`${course.name} 완료 여부`}
+          aria-label={`${course.name} 완료 여부`} 
         />
         <div>
           <div className={`course-title ${course.completed ? "done" : ""}`}>

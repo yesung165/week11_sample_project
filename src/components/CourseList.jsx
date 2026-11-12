@@ -16,18 +16,40 @@ export default function CourseList() {
   // TODO 1 (필수): 과목 추가 기능을 구현하세요.
   function handleAdd(event) {
     event.preventDefault();
-    // TODO: 빈 입력 검사, 새 과목 객체 생성, setCourses 호출, 입력창 초기화
+
+    //if empty
+    const name = newName.trim();
+    if (name === "") return;
+
+    setCourses((previous) => {
+      // new object
+      const newCourse = {
+        id: previous.length > 0 ? Math.max(...previous.map((c) => c.id)) + 1 : 1, //same logic used in crud js 
+        name,
+        category: "Major",
+        completed: false,
+      };
+      return [...previous, newCourse]; //old array plusn new object
+    });
+    setNewName("");
   }
 
   // TODO 2 (필수): 완료 상태 변경 기능을 구현하세요.
   function handleToggle(id) {
     // TODO: map과 spread(...)를 사용하여 해당 id의 completed를 반전
+    
+
+
+
+
   }
 
   const doneCount = courses.filter((course) => course.completed).length;
 
   return (
-    <> {/* This is a comment */}
+    <>
+      {" "}
+      {/* This is a comment */}
       <section className="stats" aria-label="과목 통계">
         <div className="stat">
           <span>전체 과목</span>
@@ -43,6 +65,8 @@ export default function CourseList() {
         </div>
       </section>
       <section className="panel">
+        {" "}
+        {/* Second Table */}
         <div className="panel-header">
           <h2>My Courses</h2>
           <span className="small-note">{courses.length} courses</span>
@@ -51,6 +75,8 @@ export default function CourseList() {
           실습 과제: 아래 Add 버튼과 완료 체크박스의 기능을 직접 구현하세요.
         </p>
         <form className="add-form" onSubmit={handleAdd}>
+          {" "}
+          {/*  add */}
           <input
             className="input"
             value={newName}
@@ -77,7 +103,8 @@ export default function CourseList() {
             onDelete={handleDelete}
             onToggle={handleToggle}
           />
-        ))}
+        ))}{" "}
+        {/*  couse Item */}
       </section>
     </>
   );
