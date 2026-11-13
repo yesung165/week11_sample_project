@@ -7,6 +7,7 @@ export default function CourseList() {
   const [courses, setCourses] = useState(initialCourses);
   const [newName, setNewName] = useState("");
   const [filter, setFilter] = useState("all"); // all done and active
+  const [search, setSearch] = useState(""); // search keyword for subject name
 
   // [제공] 삭제 기능: filter로 새 배열을 만들어 업데이트합니다.
   function handleDelete(id) {
@@ -56,6 +57,14 @@ export default function CourseList() {
     visibleCourses = courses.filter((course) => course.completed === false);
   }
 
+  // search by subject name then can filter
+  const keyword = search.trim().toLowerCase();
+  if (keyword !== "") {
+    visibleCourses = visibleCourses.filter((course) =>
+      course.name.toLowerCase().includes(keyword)
+    );
+  }
+
   return (
     <>
       {" "}
@@ -99,6 +108,18 @@ export default function CourseList() {
           </button>
         </form>
 
+
+        {/* search box*/}
+        <div className="tools">
+          <input
+            className="input"
+            type="search"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+            placeholder="과목명 검색"
+            aria-label="과목 검색"
+          />
+        </div>
 
         {/* drop down filter */}
         <div className="filters">
