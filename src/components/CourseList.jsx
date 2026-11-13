@@ -141,7 +141,10 @@ export default function CourseList() {
           <span>CATEGORY</span>
           <span>ACTIONS</span>
         </div>
-        
+        {visibleCourses.length === 0 && (
+          <p className="empty">찾을수 없습니다</p>
+        )}
+
         {visibleCourses.map((course) => (
           <CourseItem
             key={course.id}
