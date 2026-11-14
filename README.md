@@ -144,3 +144,20 @@ font to times new roman
 color of letters to green
 background to blue
 btn primary to red
+
+
+### Deployment
+2026ossassign11.vercel.app
+
+### Weekly Review
+
+New things I learned: 
+1. How the structure of React projects work, like component to componenet 
+2. What props are and how they are used to send data to its child 
+3. What callbacks are, and how the child can use the functions defined by the parent to change the parent state 
+
+Things I found difficult:
+The coding itself was quite hard because I am still getting used to the structure and 'grammar' of JSX files. And i think the readability of jsx files is harder 
+
+AI usage: 
+AI was helpful in understanding the key concepts of react. I asked things like why useState is used and how React handles renders. I used AI in first understanding the layout of the files and some of the logic for code be explained. 
